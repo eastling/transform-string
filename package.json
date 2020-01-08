@@ -13,8 +13,12 @@
     "transform",
     "string"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eastling/transform-string.git"
+  },
   "author": "eastling",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "app-root-path": "^3.0.0",
     "babel-types": "^6.26.0",
@@ -26,5 +30,6 @@
   "devDependencies": {
     "babel-traverse": "^6.26.0",
     "babylon": "^6.18.0"
-  }
+  },
+  "homepage": "https://github.com/eastling/transform-string.git#readme"
 }
