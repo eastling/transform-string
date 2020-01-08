@@ -1,6 +1,6 @@
 {
   "name": "trans-string",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "a tool help you to transform string to what you want",
   "main": "index.js",
   "scripts": {
