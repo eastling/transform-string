@@ -3,9 +3,6 @@
   "version": "1.0.2",
   "description": "a tool help you to transform string to what you want",
   "main": "index.js",
-  "bin": {
-    "trans-string": "./bin/transform-string.js"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
