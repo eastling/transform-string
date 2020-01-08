@@ -1,10 +1,10 @@
 {
   "name": "transform-string",
   "version": "1.0.0",
-  "description": "a tool help you to change string to special template",
-  "main": "index.js",
+  "description": "a tool help you to transform string to what you want",
+  "main": "bin/transform-string.js",
   "bin": {
-    "transform": "./bin/cmd.js"
+    "transforms": "bin/transform-string.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,19 +17,20 @@
     "type": "git",
     "url": "git+https://github.com/eastling/transform-string.git"
   },
-  "author": "eastling",
+  "author": "eastling <donaldlxd@gmail.com> (https://github.com/eastling)",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eastling/transform-string/issues"
+  },
+  "homepage": "https://github.com/eastling/transform-string.git#readme",
   "dependencies": {
     "app-root-path": "^3.0.0",
-    "babel-types": "^6.26.0",
     "clipboardy": "^2.1.0",
-    "commander": "^4.0.1",
-    "node-tesseract": "^0.2.7",
+    "commander": "^4.1.0",
     "node-tesseract-ocr": "^1.0.0"
   },
   "devDependencies": {
     "babel-traverse": "^6.26.0",
     "babylon": "^6.18.0"
-  },
-  "homepage": "https://github.com/eastling/transform-string.git#readme"
+  }
 }
