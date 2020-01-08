@@ -1,8 +1,8 @@
 {
-  "name": "transform-string",
+  "name": "trans-string",
   "version": "1.0.0",
   "description": "a tool help you to transform string to what you want",
-  "main": "bin/transform-string.js",
+  "main": "index.js",
   "bin": {
     "transforms": "bin/transform-string.js"
   },
