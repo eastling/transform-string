@@ -4,7 +4,7 @@
   "description": "a tool help you to transform string to what you want",
   "main": "index.js",
   "bin": {
-    "transforms": "bin/transform-string.js"
+    "trans-string": "./bin/transform-string.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
