@@ -1,0 +1,30 @@
+{
+  "name": "change-string",
+  "version": "1.0.0",
+  "description": "a tool help you to change string to special template",
+  "main": "index.js",
+  "bin": {
+    "transform": "./bin/cmd.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "transform",
+    "string"
+  ],
+  "author": "eastling",
+  "license": "ISC",
+  "dependencies": {
+    "app-root-path": "^3.0.0",
+    "babel-types": "^6.26.0",
+    "clipboardy": "^2.1.0",
+    "commander": "^4.0.1",
+    "node-tesseract": "^0.2.7",
+    "node-tesseract-ocr": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-traverse": "^6.26.0",
+    "babylon": "^6.18.0"
+  }
+}
