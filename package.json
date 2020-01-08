@@ -1,5 +1,5 @@
 {
-  "name": "change-string",
+  "name": "transform-string",
   "version": "1.0.0",
   "description": "a tool help you to change string to special template",
   "main": "index.js",
