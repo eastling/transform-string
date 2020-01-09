@@ -1,6 +1,6 @@
 {
   "name": "trans-string",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "a tool help you to transform string to what you want",
   "main": "bin/cmd.js",
   "bin": {
