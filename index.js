@@ -2,7 +2,6 @@
 
 const path = require("path");
 const fs = require("fs");
-const root = require("app-root-path");
 
 const tesseract = require("node-tesseract-ocr");
 const clipboardy = require("clipboardy");
@@ -27,14 +26,14 @@ if (!rule) {
 
 let transformFn = null;
 try {
-  const ruleFile = path.resolve(root.path, rule);
+  const ruleFile = path.resolve(process.cwd(), rule);
   transformFn = require(ruleFile);
 } catch (e) {
   console.log(`can not require fn, ${e}`);
   return;
 }
 
-const fileurl = path.resolve(__dirname, `${file}`);
+const fileurl = path.resolve(process.cwd(), `${file}`);
 
 let fileContent = "";
 try {
@@ -47,7 +46,7 @@ try {
 run(fileContent);
 
 async function getContentFromImage(content, name) {
-  const imageUrl = path.resolve(root.path, `${imageBaseUrl}`, `${name}`);
+  const imageUrl = path.resolve(process.cwd(), `${imageBaseUrl}`, `${name}`);
 
   const options = {
     lang,
