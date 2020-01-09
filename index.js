@@ -11,12 +11,12 @@ const program = require("commander");
 const extract = require("./lib/extract");
 const config = require("./lib/transtrc-config");
 
-const { entry, rules, output, imageBaseUrl, lang } = config;
+const { imageBaseUrl, lang } = config;
 
 program
   .option("-r, --rule <name>", "select your rule")
   .option("-f, --file [name]>", "select your file")
-  .option("-i, --image [name]", "select your image")
+  .option("-i, --image <name>", "select your image")
   .parse(process.argv);
 
 const { rule, image, file } = program.opts();
@@ -25,12 +25,16 @@ if (!rule) {
   return console.log("please select a rule with -r");
 }
 
-if (!(rule in rules)) {
-  console.log("rule name is not correct");
+let transformFn = null;
+try {
+  const ruleFile = path.resolve(root.path, rule);
+  transformFn = require(ruleFile);
+} catch (e) {
+  console.log(`can not require fn, ${e}`);
   return;
 }
 
-const fileurl = path.resolve(__dirname, `${file || entry}`);
+const fileurl = path.resolve(__dirname, `${file}`);
 
 let fileContent = "";
 try {
@@ -43,10 +47,7 @@ try {
 run(fileContent);
 
 async function getContentFromImage(content, name) {
-  if (name === true) {
-    name = getImageName(content);
-  }
-  const imageUrl = path.resolve(root.path, `${imageBaseUrl}/${name}`);
+  const imageUrl = path.resolve(root.path, `${imageBaseUrl}`, `${name}`);
 
   const options = {
     lang,
@@ -55,15 +56,6 @@ async function getContentFromImage(content, name) {
   };
 
   return await tesseract.recognize(imageUrl, options);
-}
-
-function getImageName(content) {
-  const segment = content.split(/\n/);
-  let imageName = segment[0];
-  if (imageName.endsWith(";")) {
-    imageName = imageName.substring(0, imageName.length - 1);
-  }
-  return imageName;
 }
 
 async function run(content) {
@@ -83,7 +75,7 @@ async function run(content) {
   }
 
   try {
-    const text = rules[rule](items);
+    const text = transformFn(items);
     clipboardy.writeSync(text);
     console.log("result has copied to clipboard");
   } catch {
