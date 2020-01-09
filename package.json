@@ -2,7 +2,7 @@
   "name": "trans-string",
   "version": "1.0.5",
   "description": "a tool help you to transform string to what you want",
-  "main": "index.js",
+  "main": "bin/cmd.js",
   "bin": {
     "trans-string": "bin/cmd.js"
   },
@@ -27,9 +27,7 @@
     "app-root-path": "^3.0.0",
     "clipboardy": "^2.1.0",
     "commander": "^4.1.0",
-    "node-tesseract-ocr": "^1.0.0"
-  },
-  "devDependencies": {
+    "node-tesseract-ocr": "^1.0.0",
     "babel-traverse": "^6.26.0",
     "babylon": "^6.18.0"
   }
